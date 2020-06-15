@@ -5,7 +5,7 @@ from .models import Todo
 # Create your views here.
 
 class ListTodo(generics.ListAPIView):
-    querysey = Todo.objects.all()
+    queryset = Todo.objects.all()
     serializer_class = TodoSerializer
     
 class DetailTodo(generics.RetrieveAPIView):
