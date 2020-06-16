@@ -3,30 +3,29 @@ import './App.css';
 import React, { Component } from 'react';
 import axios from 'axios'
 
-const list = [
-  {
-    "id":1,
-    "title":"Learn Http",
-    "body":"We are learning Http"
-  },
-  {
-    "id":2,
-    "title":"Learn Apis 2",
-    "body":"We are learning Apis in django backend"
-  },
-  {
-    "id":3,
-    "title":"3rd Todo",
-    "body":"This is just my third Todo"
-  }
-]
-
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { list };
+
+    state = { 
+
+      todo: []
+    };
+
+  // new
+  componentDidMount() {
+    this.getTodos();
   }
 
+  // new
+  getTodos() {
+    axios
+      .get('http://127.0.0.1:8000/api/')
+      .then(res => {
+        this.setState({ todos: res.data });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
   render() {
     return (
       <div>
