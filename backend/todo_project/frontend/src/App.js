@@ -21,6 +21,28 @@ const list = [
     "body":"This is just my third Todo"
   }
 ]
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { list };
+  }
+
+  render() {
+    return (
+      <div>
+        {
+        this.state.list.map(item => (
+        <div key={item.id}>
+        <h1>{item.title}</h1>
+        <p>{item.body}</p>
+      </div>
+      ))
+      }
+      </div>
+      );
+      }
+      }
 // function App() {
 //   return (
 //     <div className="App">
