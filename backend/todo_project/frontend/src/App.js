@@ -7,7 +7,8 @@ class App extends Component {
 
     state = { 
 
-      todo: []
+      todos: []
+      
     };
 
   // new
