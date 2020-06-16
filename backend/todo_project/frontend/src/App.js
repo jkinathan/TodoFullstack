@@ -1,8 +1,7 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import React, { component } from 'react';
 
+import './App.css';
+import React, { Component } from 'react';
+import axios from 'axios'
 
 const list = [
   {
